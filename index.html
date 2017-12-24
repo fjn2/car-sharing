@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  </head>
+  <body>
+    <div class="menu">
+      <ul class="list"></ul>
+    </div>
+    <section id="overview">
+      <h2>Overview</h2>
+    </section>
+    <section id="charge">
+      <h2>Charge</h2>
+      <ul class="list"></ul>
+      <input id="addChargeAmount" placeholder="Price" type="text" />
+      <input id="addChargeLiters" placeholder="Liters" type="text" />
+      <button id="addChargeButton">Add</button>
+    </section>
+    <section id="use">
+      <h2>Use</h2>
+      <ul class="list"></ul>
+      <input id="useKilometer" placeholder="Kilometers" type="text" />
+      <button id="usePickButton">Pick</button>
+      <button id="useLeaveButton">Leave</button>
+    </section>
+    <section id="user">
+      <h2>User</h2>
+      <input id="userName" type="text" placeholder="Your name" />
+      <button id="userButton">Update</button>
+    </section>
+    <script type="text/javascript" src="services/chargeSvc.js"></script>
+    <script type="text/javascript" src="services/userSvc.js"></script>
+    <script type="text/javascript" src="services/useSvc.js"></script>
+
+    <script type="text/javascript" src="controllers/chargeController.js"></script>
+    <script type="text/javascript" src="controllers/menuController.js"></script>
+    <script type="text/javascript" src="controllers/userController.js"></script>
+    <script type="text/javascript" src="controllers/useController.js"></script>
+
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
