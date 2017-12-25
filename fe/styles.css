@@ -1,0 +1,25 @@
+.menu {
+
+}
+.menu ul.list {
+  display: flex;
+  list-style:none;
+}
+.menu ul.list li {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  margin: 1rem;
+  background: grey;
+}
+
+#charge .list li b {
+  margin-left: 1rem;
+}
+
+#charge .list li, #use .list li {
+  display: flex;
+}
+#charge .list li *, #use .list li * {
+  flex:1;
+}
