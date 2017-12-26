@@ -4,7 +4,7 @@ const bodyParser = require('body-parser')
 
 
 const filePersistName = 'db.json';
-const persistToDiskInterval = 5000;
+const persistToDiskInterval = process.env.PERSIST_INTERVAL || 5000;
 const db = {
   use: [],
   charge: []
