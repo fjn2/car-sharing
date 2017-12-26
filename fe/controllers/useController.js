@@ -17,7 +17,8 @@ const useController = {
         const b = document.createElement('b');
         spanUsername.innerText = item.name;
         spanAction.innerText = item.isPick ? 'Pick': 'Leave';
-        b.innerText = item.km;
+        b.innerText = item.km + ' km';
+
         li.appendChild(spanUsername);
         li.appendChild(spanAction);
         li.appendChild(b);

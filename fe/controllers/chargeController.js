@@ -19,7 +19,7 @@ const chargeController = {
         bLiters.innerText = item.liters + ' liters';
         bAmount.innerText = '$ ' + item.amount;
 
-        spanDate.innerText = item.date ? ((new Date() - new Date(item.date)) / 1000 / 60 / 24).toPrecision(2) + ' days' : 'n/c';
+        spanDate.innerText = item.date ? ((new Date() - new Date(item.date)) / 1000 / 60 / 60 / 24).toPrecision(2) + ' days' : 'n/c';
 
         li.appendChild(spanUsername);
         li.appendChild(bAmount);
@@ -48,10 +48,7 @@ const chargeController = {
 
       chargeSvc.addCharge(username, amount, liters)
       .then(this.clearList)
-      .then(this.getList)
-      .then(() => {
-        alert('Operation successfull');
-      });
+      .then(this.getList);
     } else {
       alert('Amount format not valid');
     }

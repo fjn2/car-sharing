@@ -17,4 +17,5 @@ const store = new Proxy({}, {
   chargeController.init();
   userController.init();
   useController.init();
+  overviewController.init();
 })();

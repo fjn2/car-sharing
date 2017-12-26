@@ -17,9 +17,9 @@
   margin-left: 1rem;
 }
 
-#charge .list li, #use .list li {
+#overview .list li, #charge .list li, #use .list li {
   display: flex;
 }
-#charge .list li *, #use .list li * {
+#overview .list li *, #charge .list li *, #use .list li * {
   flex:1;
 }

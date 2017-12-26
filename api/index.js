@@ -24,7 +24,8 @@ app.use(bodyParser.json());
 app.get('/overview', (req, res, next) => {
   console.log('GET /overview');
   const dashboard = {
-    usage: calculateKilometerPerDriver(db.use)
+    usage: calculateKilometerPerDriver(db.use),
+    charge: calculateChargePerDriver(db.charge)
   }
   res.send(dashboard);
 });
@@ -72,9 +73,6 @@ function readInit() {
   if (content.length > 0) {
     Object.assign(db, JSON.parse(content));
   }
-
-  // remove this line
-  console.log(calculateKilometerPerDriver(db.use));
 }
 
 function persistToDisk() {
@@ -99,7 +97,7 @@ function calculateKilometerPerDriver(actions) {
     name: '',
     km: 0
   };
-  debugger;
+
   let sortedActions = actions.sort((a, b) => (a.km * 1 > b.km * 1));
   for (let i = 0; i < sortedActions.length; i++) {
     if (!users[sortedActions[i].name]) {
@@ -131,6 +129,22 @@ function calculateKilometerPerDriver(actions) {
     }
     // advance in the km
     currentDriver.km = sortedActions[i].km;
+  }
+  return users;
+}
+
+function calculateChargePerDriver(actions) {
+  const users = {};
+  for (let i = 0; i < actions.length; i++) {
+    if (!users[actions[i].username]) {
+      // creates the user
+      users[actions[i].username] = {
+        liters: 0,
+        amount: 0
+      };
+    }
+    users[actions[i].username].liters += actions[i].liters * 1;
+    users[actions[i].username].amount += actions[i].amount * 1;
   }
   return users;
 }
