@@ -3,7 +3,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser')
 
 
-const filePersistName = 'db.json';
+const filePersistName = '/db.json';
 const persistToDiskInterval = process.env.PERSIST_INTERVAL || 5000;
 const db = {
   use: [],
@@ -68,7 +68,7 @@ app.listen(port, function() {
 
 function readInit() {
   console.log('readInit');
-  const content = fs.readFileSync(filePersistName);
+  const content = fs.readFileSync(process.cwd() + filePersistName);
   console.log('Getting this content:', content + '');
   if (content.length > 0) {
     Object.assign(db, JSON.parse(content));
@@ -77,7 +77,7 @@ function readInit() {
 
 function persistToDisk() {
   console.log('persistToDisk', JSON.stringify(db));
-  fs.writeFileSync(filePersistName, JSON.stringify(db));
+  fs.writeFileSync(process.cwd() + filePersistName, JSON.stringify(db));
 }
 
 readInit();
