@@ -100,6 +100,9 @@ function calculateKilometerPerDriver(actions) {
 
   let sortedActions = actions.sort((a, b) => (a.km * 1 > b.km * 1));
   for (let i = 0; i < sortedActions.length; i++) {
+    if (i === 0) {
+      users.unknown.km -= sortedActions[i].km - currentDriver.km;
+    }
     if (!users[sortedActions[i].name]) {
       // creates the user
       users[sortedActions[i].name] = {
