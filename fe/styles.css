@@ -3,7 +3,7 @@
 }
 .menu ul.list {
   display: flex;
-  list-style:none;
+  list-style: none;
 }
 .menu ul.list li {
   flex: 1;
@@ -12,7 +12,9 @@
   margin: 1rem;
   background: grey;
 }
-
+ul.list {
+  padding: 0;
+}
 #charge .list li b {
   margin-left: 1rem;
 }
