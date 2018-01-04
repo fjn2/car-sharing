@@ -98,7 +98,14 @@ function calculateKilometerPerDriver(actions) {
     km: 0
   };
 
-  let sortedActions = actions.sort((a, b) => (a.km * 1 > b.km * 1));
+  let sortedActions = actions.sort((a, b) => {
+    if (a.km === b.km) {
+      return a.isPick;
+    } else {
+      return a.km * 1 - b.km * 1
+    }
+  });
+
   for (let i = 0; i < sortedActions.length; i++) {
     if (i === 0) {
       users.unknown.km -= sortedActions[i].km - currentDriver.km;
