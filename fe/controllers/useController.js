@@ -10,7 +10,7 @@ const useController = {
   getList: () => (new Promise((resolve, reject) => {
     useSvc.getList().then((useItems) => {
       const list = document.querySelector('#use .list');
-      useItems.forEach((item, index) => {
+      useItems.reverse().forEach((item, index) => {
         const li = document.createElement('li');
         const spanUsername = document.createElement('span');
         const spanAction = document.createElement('span');
