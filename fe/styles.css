@@ -11,6 +11,7 @@
   cursor: pointer;
   margin: 1rem;
   background: grey;
+  color: white;
 }
 ul.list {
   padding: 0;

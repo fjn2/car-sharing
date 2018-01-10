@@ -10,7 +10,7 @@ const useController = {
   getList: () => (new Promise((resolve, reject) => {
     useSvc.getList().then((useItems) => {
       const list = document.querySelector('#use .list');
-      useItems.reverse().forEach((item, index) => {
+      useItems.forEach((item, index) => {
         const li = document.createElement('li');
         const spanUsername = document.createElement('span');
         const spanAction = document.createElement('span');
@@ -30,7 +30,7 @@ const useController = {
         li.appendChild(b);
         li.appendChild(spanDate);
 
-        list.appendChild(li);
+        list.insertBefore(li, list.firstChild);
       });
     })
   })),
