@@ -153,8 +153,8 @@ function calculateChargePerDriver(actions) {
         amount: 0
       };
     }
-    users[actions[i].username].liters += actions[i].liters * 1;
-    users[actions[i].username].amount += actions[i].amount * 1;
+    users[actions[i].username].liters += Math.round(actions[i].liters * 1);
+    users[actions[i].username].amount += Math.round(actions[i].amount * 1);
   }
   return users;
 }

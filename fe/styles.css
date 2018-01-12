@@ -16,6 +16,10 @@
 ul.list {
   padding: 0;
 }
+
+section ul.list li:nth-child(2n) {
+  background: #eee;
+}
 #charge .list li b {
   margin-left: 1rem;
 }

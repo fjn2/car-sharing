@@ -19,7 +19,7 @@ const useController = {
         spanUsername.innerText = item.name;
         spanAction.innerText = item.isPick ? 'Pick': 'Leave';
 
-        const diffWithPrevious = index ? item.km * 1 - useItems[index - 1].km * 1 : 0;
+        const diffWithPrevious = index ? item.km * 1 - useItems[index - 1].km * 1: 0;
 
         b.innerText = item.km + ' km (+' + diffWithPrevious + ')';
 
